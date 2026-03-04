@@ -44,12 +44,19 @@ Application type: web
 TypeScript 5.9.3
 Framework:React 18.2.0
 Unit testing:Jest 29 ,React Testing Library 14
-Integration testing:Playwright
+Data validation framework:zod
+Code prettier framework:prettier
+Code style framework:ESLint
+
+Integration testing:Playwright 1.58
 Hosting by:AWS
 Cloud Service: AWS 
-Repository:GitHub
-Librery:vite,@reduxjs/toolkit,react-redux,eslint,prettier
-Enviroments: deployments AWS
+Code Repository:GitHub
+Code automation task tool:Git hooks with Husky
+CI CD pipelines technology:GitHub Actions
+Environments:Development,Staging,Production
+Environment deployments tools:GitHub Actions,AWS CLI
+Observability framework:AWS CloudWatch
 
 
 1.2 UX UI analysis: Incluye los atributos de usabilidad deseables del aplicativo, un diseño preliminar del UX a modo wireframes, y las evidencias de las pruebas de UX con usuarios reales que validan diseño diseño preliminar
