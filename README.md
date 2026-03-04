@@ -1,39 +1,39 @@
 # DUA Streamliner
-## Sistema Inteligente para la Generación Automatizada del Documento Único Aduanero (DUA)
 
-##  Problema que se desea resolver
-
-El Documento Único Aduanero (DUA) es el instrumento oficial utilizado para declarar mercancías ante la autoridad aduanera en Costa Rica.
-
-La correcta preparación del DUA implica interpretar múltiples documentos fuente como:
-
-- Facturas comerciales
-- Listas de empaque
-- Certificados de origen
-- Conocimientos de embarque
-- Pólizas y permisos especiales
-
-Estos documentos suelen encontrarse en formatos heterogéneos como Excel, Word, PDF e imágenes escaneadas.
-
-El llenado manual del DUA es un proceso repetitivo, propenso a errores y altamente dependiente del conocimiento experto.
-
-El proyecto DUA Streamliner propone el diseño de un sistema automatizado capaz de:
-
-- Leer documentos en múltiples formatos
-- Extraer información semántica mediante inteligencia artificial
-- Mapear automáticamente los datos al template oficial del DUA
-- Generar un documento Word prellenado con indicadores de confianza
-
-El objetivo es transformar al experto aduanero en un validador estratégico, reduciendo el trabajo operativo manual y minimizando errores.
+## Intelligent System for the Automated Generation of the Single Customs Declaration (DUA)
 
 ---
 
-## Autores
+## Problem to be Solved
 
-- Nombre Catherin Madriz Badilla
+The Single Customs Declaration (DUA) is the official document used to declare goods before the customs authority in Costa Rica.
 
+Proper preparation of the DUA requires interpreting multiple source documents such as:
 
-Curso: Diseño de software
-Profesor: Rodrigo nuñes
-Universidad: Instituto tecnologico de Costa Rica 
+- Commercial invoices  
+- Packing lists  
+- Certificates of origin  
+- Bills of lading  
+- Insurance policies and special permits  
 
+These documents are often provided in heterogeneous formats such as Excel, Word, PDF, and scanned images.
+
+Manual completion of the DUA is a repetitive process, prone to errors, and highly dependent on expert knowledge.
+
+The **DUA Streamliner** project proposes the design of an automated system capable of:
+
+- Reading documents in multiple formats  
+- Extracting semantic information using artificial intelligence  
+- Automatically mapping data to the official DUA template  
+- Generating a pre-filled Word document with confidence indicators  
+
+The objective is to transform the customs expert into a strategic validator, reducing manual operational workload and minimizing errors.
+
+---
+
+##  Authors
+
+**Name:** Catherin Madriz Badilla  
+**Course:** Software Design  
+**Professor:** Rodrigo Núñez  
+**University:** Instituto Tecnológico de Costa Rica  
