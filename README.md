@@ -35,5 +35,5 @@ El objetivo es transformar al experto aduanero en un validador estratégico, red
 
 Curso: Diseño de software
 Profesor: Rodrigo nuñes
-Universidad: Nombre de la universidad  
-Fecha: Fecha de entrega
+Universidad: Instituto tecnologico de Costa Rica 
+
