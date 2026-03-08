@@ -44,8 +44,6 @@ The objective is to transform the customs expert into a strategic validator, red
 
 ## 1.1 Technology stack
 
-tecnología de frontend, de seguridad, librerías de terceros, frameworks, hosting; todos con su respectiva versión
-
 Application type: web  
 
 TypeScript 5.9.3  
@@ -157,9 +155,23 @@ The system returns to the initial authentication state, waiting for a new user s
 
 ---
 
+## UX test results
+name of the strategy: Atomic Design with Component Driven Development
+
+reutilization by:
+Reusable UI components organized in hierarchical levels:
+Atoms: basic elements (buttons, inputs, labels)
+Molecules: combination of atoms (form fields)
+Organisms: complex UI blocks (navigation bar, forms)
+Templates and pages
+
+internacionalization by: react-i18next
+
+responsiveness by: CSS Flexbox and Grid, Responsive layout patterns ,Media queries
+
 ## 1.3 Component design strategy
 
-Define la técnica y los principios de diseño de componentes del frontend, cómo se logra la reutilización de componentes, cómo se logra centralizar los estilos, el branding, la internacionalización y la responsividad.
+
 
 ---
 
