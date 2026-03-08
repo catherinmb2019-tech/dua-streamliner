@@ -94,8 +94,8 @@ The system allows the user to continue to the stage where the DUA generation pro
 ---
 
 ## Configure Generator
+<img src="images/configuracion.png" width="200" alt="Configure Generator Wireframe">
 
-![Configure Generator Wireframe](images/configuracion.png)
 
 The user starts a new DUA generation process.  
 The system requests the location where the documents required for the declaration are stored.  
@@ -112,7 +112,7 @@ The system initializes the processing engines responsible for reading and interp
 
 ## Monitor Progress
 
-![Monitor Progress Wireframe](images/monitoreo.png)
+<img src="images/monitoreo.png" width="200" alt="Monitor Progress Wireframe">
 
 After the process begins, the system starts analyzing the provided documents.  
 The user checks the current status of the process to observe its progress.  
@@ -129,7 +129,7 @@ Throughout the process, the system continuously updates the progress status unti
 
 ## Result Retrieval / Export
 
-![Result Wireframe](images/resultado.png)
+<img src="images/resultado.png" width="200" alt="Result Wireframe">
 
 Once the document processing is completed, the system confirms that the DUA generation process has finished.  
 The system organizes all extracted information and assigns it to the corresponding fields of the official DUA template.  
@@ -144,7 +144,7 @@ The resulting document can then be stored, reviewed, or used in the customs decl
 
 ## Log Out
 
-![Logout Wireframe](images/logout.png)
+<img src="images/logout.png" width="200" alt="Logout Wireframe">
 
 After finishing the work session, the user decides to end the interaction with the system.  
 The system receives the request to terminate the active session.  
