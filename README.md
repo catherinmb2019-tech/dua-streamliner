@@ -75,8 +75,7 @@ Observability framework: AWS CloudWatch
 ---
 
 ## 1.2 UX UI analysis
-
-Incluye los atributos de usabilidad deseables del aplicativo, un diseño preliminar del UX a modo wireframes, y las evidencias de las pruebas de UX con usuarios reales que validan diseño diseño preliminar
+## Core business process
 
 ---
 
