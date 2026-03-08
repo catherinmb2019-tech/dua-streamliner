@@ -166,9 +166,21 @@ The system returns to the initial authentication state, waiting for a new user s
 
 ## Evidence
 #### Heatmap
+### Login Analysis
+<img src="images/loginhead.png" width="200">
 
 
-![Heatmap General](URL_DE_TU_FOTO_HEATMAP)
+### Configuration Setup
+<img src="images/configuracionhead.png" width="200">
+
+
+### Process Monitoring
+<img src="images/monitoreohead.png" width="200">
+
+### Result Retrieval
+<img src="images/resultadohead.png" width="200">
+### Logout Process
+<img src="images/logouthead.png" width="200">
 
 ### Evidence: Individual Click Maps
 
