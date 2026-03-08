@@ -174,9 +174,9 @@ The system returns to the initial authentication state, waiting for a new user s
 
 | Natalia Picado | Catherin Madriz |
 | :---: | :---: |
-| <img src="images/nataliaclick.png" width="150" alt="Natalia Click"> | <img src="images/clickcatherin" width="150" alt="Catherin Click"> |
+| <img src="images/nataliaclick.png" width="150" alt="Natalia Click"> | <img src="images/clickcatherin.png" width="150" alt="Catherin Click"> |
 | **Tamara Robles** | **Brandy Piedra** |
-| <img src="images/clicktama" width="150" alt="Tamara Click"> | <img src="images/brandyclick" width="150" alt="Brandy Click"> |
+| <img src="images/clicktama.png" width="150" alt="Tamara Click"> | <img src="images/brandyclick.png" width="150" alt="Brandy Click"> |
 
 ---
 
