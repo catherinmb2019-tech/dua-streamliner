@@ -156,13 +156,28 @@ The system returns to the initial authentication state, waiting for a new user s
 ---
 
 ## UX test results
-## Resultados
-| Participante | Ubicación | Duración del Test | Porcentaje de Acierto |
+## Results
+| Participant | Location |Test Duration | Click Accuracy |
 | :--- | :--- | :--- | :--- |
 | **Natalia Picado** | Costa Rica | 59 s | 80% |
 | **Catherin Madriz** | Costa Rica | 34 s | 90% |
 | **Tamara Robles** | Costa Rica | 1 m 32 s | 60% |
 | **Brandy Piedra** | Colombia | 2 m 21 s | 70% |
+
+## Evidence
+#### Heatmap
+
+
+![Heatmap General](URL_DE_TU_FOTO_HEATMAP)
+
+### 📸 Evidence: Individual Click Maps
+
+| Natalia Picado | Catherin Madriz |
+| :---: | :---: |
+| ![Natalia Click](images/nataliaclick.png) | ![Catherin Click](INSERT_LINK_HERE) |
+| **Tamara Robles** | **Brandy Piedra** |
+| ![Tamara Click](INSERT_LINK_HERE) | ![Brandy Click](INSERT_LINK_HERE) |
+
 ---
 
 ## 1.3 Component design strategy
