@@ -79,7 +79,7 @@ Observability framework: AWS CloudWatch
 
 ## Login
 
-<img src="images/login.png" width="600" alt="Login Wireframe">
+<img src="images/login.png" width="200" alt="Login Wireframe">
 
 The person accesses the system in order to start the DUA generation process.  
 The system requests the information necessary to identify the user.  
