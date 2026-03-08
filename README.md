@@ -156,6 +156,9 @@ The system returns to the initial authentication state, waiting for a new user s
 ---
 
 ## UX test results
+---
+
+## 1.3 Component design strategy
 name of the strategy: Atomic Design with Component Driven Development
 
 reutilization by:
@@ -168,8 +171,6 @@ Templates and pages
 internacionalization by: react-i18next
 
 responsiveness by: CSS Flexbox and Grid, Responsive layout patterns ,Media queries
-
-## 1.3 Component design strategy
 
 
 
