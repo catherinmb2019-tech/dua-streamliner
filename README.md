@@ -170,13 +170,13 @@ The system returns to the initial authentication state, waiting for a new user s
 
 ![Heatmap General](URL_DE_TU_FOTO_HEATMAP)
 
-### 📸 Evidence: Individual Click Maps
+### Evidence: Individual Click Maps
 
 | Natalia Picado | Catherin Madriz |
 | :---: | :---: |
-| ![Natalia Click](images/nataliaclick.png) | ![Catherin Click](INSERT_LINK_HERE) |
+| <img src="images/nataliaclick.png" width="150" alt="Natalia Click"> | <img src="images/clickcatherin" width="150" alt="Catherin Click"> |
 | **Tamara Robles** | **Brandy Piedra** |
-| ![Tamara Click](INSERT_LINK_HERE) | ![Brandy Click](INSERT_LINK_HERE) |
+| <img src="images/clicktama" width="150" alt="Tamara Click"> | <img src="images/brandyclick" width="150" alt="Brandy Click"> |
 
 ---
 
