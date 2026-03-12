@@ -214,11 +214,11 @@ responsiveness by: CSS Flexbox and Grid, Responsive layout patterns ,Media queri
 --MFA 
 The system will support MFA.
 The selected methods will be:
--Authentication application (TOTP)
+--Authentication application (TOTP)
   Supported applications:
   Google Authenticator
   Microsoft Authenticator
-- Email OTP
+--Email OTP
 
 --SSO Support
 The system does not implement Single Sign-On
