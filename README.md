@@ -222,19 +222,19 @@ Supported applications:
 - Microsoft Authenticator  
 **Email OTP**
 
----
+
 ### SSO Support
 The system does not implement Single Sign-On
 
----
+
 ### Authentication Service
 The system authentication is managed using Amazon Cognito, the identity management service provided by AWS.
 
----
+
 ### Social Authentication Support
 The system does not support social authentication such as Google or Facebook login.
 
----
+
 ### Authorization Model
 The system implements Role-Based Access Control (RBAC) to manage user permissions and system access.
 
@@ -249,19 +249,19 @@ Responsible for managing system configuration, users, and platform administratio
 **Support Agent:**  
 Responsible for assisting users, troubleshooting system issues, and reviewing processing errors.
 
----
+
 
 ### Secure Store Service
 
 Sensitive configuration data such as API keys, tokens, environment variables, and credentials are stored using AWS Secrets Manager
 
----
+
 
 ### Authenticator Server Name
 
 DUA Streamliner Authentication Server
 
----
+
 
 ## 1.5 Layered design
 
