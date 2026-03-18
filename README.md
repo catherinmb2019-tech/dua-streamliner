@@ -261,11 +261,221 @@ Sensitive configuration data such as API keys, tokens, environment variables, an
 
 DUA Streamliner Authentication Server
 
-
+---
 
 ## 1.5 Layered design
+## Frontend Architecture - Folder Structure
+src/
 
-diseño y explicación de las diversas capas de la aplicación en el frontend.
+├── app/                         # Global application configuration
+│   ├── routes/                 # Application routing definitions
+│   ├── providers/              # Global providers (Auth, Theme, etc.)
+│   ├── store/                  # Global state management
+│   └── config/                 # General configuration
+│
+├── domain/                     # Core business logic
+│   ├── models/                 # TypeScript interfaces and types
+│   ├── schemas/                # Data validation using Zod
+│   ├── use-cases/              # Business use cases (e.g., generate DUA)
+│   └── services/               # Service contracts (interfaces)
+│
+├── infrastructure/             # External services and integrations
+│   ├── api/                    # HTTP clients (fetch/axios)
+│   ├── auth/                   # Authentication (AWS Cognito)
+│   ├── storage/                # File handling (uploads, downloads)
+│   └── mappers/                # Data transformation logic
+│
+├── presentation/               # UI Layer (Atomic Design)
+│   ├── atoms/                  # Basic UI components
+│   ├── molecules/              # Combined UI components
+│   ├── organisms/              # Complex UI sections
+│   ├── templates/              # Layout structures
+│   └── pages/                  # Full application screens
+│
+├── hooks/                      # Custom React hooks
+│
+├── utils/                      # Utility/helper functions
+│
+├── styles/                     # Global styles
+│
+├── tests/                      # Testing
+│   ├── unit/                   # Unit tests (Jest, RTL)
+│   └── integration/            # Integration tests (Playwright)
+│
+├── assets/                     # Static assets (images, icons)
+│
+├── env/                        # Non-sensitive environment config
+│
+└── main.tsx                    # Application entry point
+
+
+## Layered Design
+
+The frontend application follows a **Layered Architecture** combined with **Atomic Design principles** and is implemented using React 18 and TypeScript.
+
+The application is deployed as a web application hosted on AWS.
+
+---
+
+### Authentication Flow
+
+When a user accesses the system, the application checks for an active authenticated session.
+
+If no session exists, the **Authentication Layer** is invoked using Amazon Cognito as the identity provider.
+
+The system requires:
+
+- Username and password authentication  
+- Multi-Factor Authentication (MFA) using Authenticator Apps or Email OTP  
+
+Single Sign-On (SSO) and social authentication (Google, Facebook) are not supported in order to maintain strict control over user identities.
+
+If authentication is successful, a secure JWT token is issued and used for subsequent requests.
+
+---
+
+### Authorization Layer
+
+The system implements **Role-Based Access Control (RBAC)**.
+
+The defined roles are:
+
+- Administrator  
+- Customs Officer  
+- Support Agent  
+
+Each role determines the level of access and permitted actions within the system.
+
+---
+
+### Presentation Layer
+
+The UI is rendered in the **Presentation Layer**, structured using **Atomic Design**:
+
+- Atoms  
+- Molecules  
+- Organisms  
+- Templates  
+- Pages  
+
+This ensures high reusability, scalability, and consistency across the application.
+
+---
+
+### Hooks Layer
+
+Within the Presentation Layer, a **Hooks Layer** connects user interactions with business logic.
+
+Custom React hooks handle:
+
+- state management  
+- side effects  
+- communication with application services  
+
+---
+
+### Application Layer
+
+The Application Layer contains the system’s **use cases**, such as:
+
+- document ingestion  
+- data extraction  
+- DUA generation  
+- validation workflows  
+
+This layer orchestrates interactions between UI and domain logic.
+
+---
+
+### Domain Layer
+
+The Domain Layer contains:
+
+- business models (TypeScript interfaces)  
+- validation schemas using Zod  
+- business rules and logic  
+
+All incoming and outgoing data is validated to ensure consistency and correctness.
+
+---
+
+### Infrastructure Layer
+
+The Infrastructure Layer handles communication with external systems and services, including:
+
+- API clients for backend services  
+- authentication via Amazon Cognito  
+- file handling for uploaded documents  
+
+API clients retrieve sensitive configuration such as API keys and endpoints from a secure store.
+
+---
+
+### Secure Configuration Layer
+
+Sensitive data such as:
+
+- API keys  
+- tokens  
+- credentials  
+
+are securely stored using AWS Secrets Manager.
+
+This prevents exposure of sensitive information in source code or environment files.
+
+---
+
+### Observability and Logging Layer
+
+The system includes a **Logging Layer** that captures application events, errors, and system activity.
+
+Logs are sent to AWS CloudWatch for:
+
+- monitoring  
+- debugging  
+- auditing  
+
+---
+
+### Exception Handling Layer
+
+A centralized **Exception Handling Layer** ensures consistent error management across all layers of the application.
+
+---
+
+### Testing Layer
+
+The system includes:
+
+- Unit testing using Jest and React Testing Library  
+- Integration testing using Playwright  
+
+This ensures reliability and correctness of both components and system workflows.
+
+---
+
+### Shared Layers
+
+All layers may access shared components such as:
+
+- Models  
+- Utils  
+- Validation schemas  
+
+These shared resources promote consistency and reuse across the system.
+
+---
+
+### Architecture Characteristics
+
+The system is designed to be:
+
+- Scalable  
+- Secure  
+- Maintainable  
+- Modular  
+
+and fully aligned with AWS cloud-native best practices.
 
 ---
 
