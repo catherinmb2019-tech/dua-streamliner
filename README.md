@@ -477,11 +477,118 @@ The system is designed to be:
 
 and fully aligned with AWS cloud-native best practices.
 
+
+## typical Responsibility Layers
+-Presentation Layer
+-Application Layer
+-Domain Layer
+-Infrastructure Layer
+-Cross-Cutting Concerns Layer
+
+
+
+## Layered Architecture Diagram
+          +----------------------+
+          |     User Browser     |
+          +----------+-----------+
+                     |
+                     v
+          +----------------------+
+          |   React Web App      |
+          |  (Client-side SPA)   |
+          +----------+-----------+
+                     |
+             Authentication Flow
+                     |
+          +----------------------+
+          | Authentication Layer |
+          |  Amazon Cognito      |
+          |  + MFA (TOTP/Email)  |
+          +----------+-----------+
+                     |
+             JWT Token Issued
+                     |
+                     v
+          +----------------------+
+          |  Presentation Layer  |
+          |   Atomic Design UI   |
+          | Atoms → Pages        |
+          +----------+-----------+
+                     |
+                   Hooks
+                     |
+                     v
+          +----------------------+
+          |  Application Layer   |
+          |     Use Cases        |
+          | (DUA Generation,     |
+          |  Document Processing)|
+          +----------+-----------+
+                     |
+                     v
+          +----------------------+
+          |    Domain Layer      |
+          | Models + Zod         |
+          | Business Rules       |
+          +----------+-----------+
+                     |
+                     v
+          +----------------------+
+          | Infrastructure Layer |
+          | API Clients          |
+          | File Processing      |
+          | Cognito Integration  |
+          +----------+-----------+
+                     |
+     +---------------+-------------------+
+     |                                   |
+     v                                   v
++----------------------+       +----------------------+
+|   Secure Store       |       |   External Services  |
+| AWS Secrets Manager  |       | OCR / APIs / Backend |
++----------------------+       +----------------------+
+     |
+ Secrets / Config
+     
+                     
+          +----------------------+
+          |  Logging Layer       |
+          | AWS CloudWatch       |
+          +----------------------+
+
+          +----------------------+
+          | Exception Handling   |
+          |  (Cross-cutting)     |
+          +----------------------+
+
+          +----------------------+
+          |   RBAC Layer         |
+          | Roles:               |
+          | Admin                |
+          | Customs Officer      |
+          | Support Agent        |
+          +----------------------+
 ---
 
 ## 1.6 Design patterns
 
-Diseño de classes con su respectiva ubicación en la estructura del proyecto, donde sea necesario aplicar patrones de diseño orientado a objetos, como por ejemplo: seguridad, refrescado de UI, recepción de notificaciones, almacenamiento de estados, llamadas a api, operaciones asíncronas, invalidación de sesiones, programación por eventos, creación de objetos.
+--Use Strategy Pattern and Factory Method Pattern to handle different document input types (Word, Excel, PDF, Images).
+Concrete processors such as: WordProcessor, ExcelProcessor, PdfProcessor, ImageProcessor (OCR) are selected dynamically based on file type.
+
+--Long-running operations such as document processing, OCR, and DUA generation are handled using Observer Pattern and Promise (Async/Future Pattern).
+The UI subscribes to processing updates and receives notifications when tasks are completed.
+
+--Use Singleton Pattern for shared instances such as:
+ExceptionHandling, Logger, AuthService, ApiClients, Settings, and StateManagement.
+
+--Use Strategy Pattern and Decorator Pattern to manage token protection mechanisms.
+This allows switching between strategies such as JWT, Encrypted Storage, or HttpOnly Cookies, and adding extra security layers dynamically.
+
+--Use Facade Pattern and Adapter Pattern to reduce the proliferation of API clients.
+A unified service interface (e.g., DUAServiceFacade) abstracts multiple backend and external services, while adapters standardize different API responses.
+
+--Use Template Method Pattern and Interpreter Pattern to perform text replacement in the final Word document in a format-agnostic way.
+Placeholders such as {{importer.name}} or {{invoice.total}} are interpreted dynamically, regardless of document structure or section.
 
 ---
 
