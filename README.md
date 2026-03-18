@@ -264,49 +264,6 @@ DUA Streamliner Authentication Server
 ---
 
 ## 1.5 Layered design
-## Frontend Architecture - Folder Structure
-src/
-
-├── app/                         # Global application configuration
-│   ├── routes/                 # Application routing definitions
-│   ├── providers/              # Global providers (Auth, Theme, etc.)
-│   ├── store/                  # Global state management
-│   └── config/                 # General configuration
-│
-├── domain/                     # Core business logic
-│   ├── models/                 # TypeScript interfaces and types
-│   ├── schemas/                # Data validation using Zod
-│   ├── use-cases/              # Business use cases (e.g., generate DUA)
-│   └── services/               # Service contracts (interfaces)
-│
-├── infrastructure/             # External services and integrations
-│   ├── api/                    # HTTP clients (fetch/axios)
-│   ├── auth/                   # Authentication (AWS Cognito)
-│   ├── storage/                # File handling (uploads, downloads)
-│   └── mappers/                # Data transformation logic
-│
-├── presentation/               # UI Layer (Atomic Design)
-│   ├── atoms/                  # Basic UI components
-│   ├── molecules/              # Combined UI components
-│   ├── organisms/              # Complex UI sections
-│   ├── templates/              # Layout structures
-│   └── pages/                  # Full application screens
-│
-├── hooks/                      # Custom React hooks
-│
-├── utils/                      # Utility/helper functions
-│
-├── styles/                     # Global styles
-│
-├── tests/                      # Testing
-│   ├── unit/                   # Unit tests (Jest, RTL)
-│   └── integration/            # Integration tests (Playwright)
-│
-├── assets/                     # Static assets (images, icons)
-│
-├── env/                        # Non-sensitive environment config
-│
-└── main.tsx                    # Application entry point
 
 
 ## Layered Design
@@ -315,7 +272,6 @@ The frontend application follows a **Layered Architecture** combined with **Atom
 
 The application is deployed as a web application hosted on AWS.
 
----
 
 ### Authentication Flow
 
@@ -332,7 +288,6 @@ Single Sign-On (SSO) and social authentication (Google, Facebook) are not suppor
 
 If authentication is successful, a secure JWT token is issued and used for subsequent requests.
 
----
 
 ### Authorization Layer
 
@@ -346,7 +301,6 @@ The defined roles are:
 
 Each role determines the level of access and permitted actions within the system.
 
----
 
 ### Presentation Layer
 
@@ -360,7 +314,6 @@ The UI is rendered in the **Presentation Layer**, structured using **Atomic Desi
 
 This ensures high reusability, scalability, and consistency across the application.
 
----
 
 ### Hooks Layer
 
@@ -372,7 +325,6 @@ Custom React hooks handle:
 - side effects  
 - communication with application services  
 
----
 
 ### Application Layer
 
@@ -385,7 +337,6 @@ The Application Layer contains the system’s **use cases**, such as:
 
 This layer orchestrates interactions between UI and domain logic.
 
----
 
 ### Domain Layer
 
@@ -397,7 +348,6 @@ The Domain Layer contains:
 
 All incoming and outgoing data is validated to ensure consistency and correctness.
 
----
 
 ### Infrastructure Layer
 
@@ -409,7 +359,6 @@ The Infrastructure Layer handles communication with external systems and service
 
 API clients retrieve sensitive configuration such as API keys and endpoints from a secure store.
 
----
 
 ### Secure Configuration Layer
 
@@ -423,7 +372,6 @@ are securely stored using AWS Secrets Manager.
 
 This prevents exposure of sensitive information in source code or environment files.
 
----
 
 ### Observability and Logging Layer
 
@@ -435,13 +383,11 @@ Logs are sent to AWS CloudWatch for:
 - debugging  
 - auditing  
 
----
 
 ### Exception Handling Layer
 
 A centralized **Exception Handling Layer** ensures consistent error management across all layers of the application.
 
----
 
 ### Testing Layer
 
@@ -452,7 +398,6 @@ The system includes:
 
 This ensures reliability and correctness of both components and system workflows.
 
----
 
 ### Shared Layers
 
@@ -464,7 +409,6 @@ All layers may access shared components such as:
 
 These shared resources promote consistency and reuse across the system.
 
----
 
 ### Architecture Characteristics
 
@@ -487,87 +431,7 @@ and fully aligned with AWS cloud-native best practices.
 
 
 
-## Layered Architecture Diagram
-          +----------------------+
-          |     User Browser     |
-          +----------+-----------+
-                     |
-                     v
-          +----------------------+
-          |   React Web App      |
-          |  (Client-side SPA)   |
-          +----------+-----------+
-                     |
-             Authentication Flow
-                     |
-          +----------------------+
-          | Authentication Layer |
-          |  Amazon Cognito      |
-          |  + MFA (TOTP/Email)  |
-          +----------+-----------+
-                     |
-             JWT Token Issued
-                     |
-                     v
-          +----------------------+
-          |  Presentation Layer  |
-          |   Atomic Design UI   |
-          | Atoms → Pages        |
-          +----------+-----------+
-                     |
-                   Hooks
-                     |
-                     v
-          +----------------------+
-          |  Application Layer   |
-          |     Use Cases        |
-          | (DUA Generation,     |
-          |  Document Processing)|
-          +----------+-----------+
-                     |
-                     v
-          +----------------------+
-          |    Domain Layer      |
-          | Models + Zod         |
-          | Business Rules       |
-          +----------+-----------+
-                     |
-                     v
-          +----------------------+
-          | Infrastructure Layer |
-          | API Clients          |
-          | File Processing      |
-          | Cognito Integration  |
-          +----------+-----------+
-                     |
-     +---------------+-------------------+
-     |                                   |
-     v                                   v
-+----------------------+       +----------------------+
-|   Secure Store       |       |   External Services  |
-| AWS Secrets Manager  |       | OCR / APIs / Backend |
-+----------------------+       +----------------------+
-     |
- Secrets / Config
-     
-                     
-          +----------------------+
-          |  Logging Layer       |
-          | AWS CloudWatch       |
-          +----------------------+
 
-          +----------------------+
-          | Exception Handling   |
-          |  (Cross-cutting)     |
-          +----------------------+
-
-          +----------------------+
-          |   RBAC Layer         |
-          | Roles:               |
-          | Admin                |
-          | Customs Officer      |
-          | Support Agent        |
-          +----------------------+
 ---
 
 ## 1.6 Design patterns
