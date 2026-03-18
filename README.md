@@ -430,8 +430,8 @@ and fully aligned with AWS cloud-native best practices.
 -Cross-Cutting Concerns Layer
 
 
-
-
+<img src="images/diagrama1.png" width="300" alt="diagrama1">
+<img src="images/diagrama2.png" width="300" alt="diagrama2">
 ---
 
 ## 1.6 Design patterns
