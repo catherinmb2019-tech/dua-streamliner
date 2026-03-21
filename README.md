@@ -456,6 +456,50 @@ Placeholders such as {{importer.name}} or {{invoice.total}} are interpreted dyna
 
 ---
 
-## 1.7 Project scaffold
+## 1.7 Project Scaffold (/src)
 
-un folder en /src que contiene el scaffold del proyecto, el cual se genera a partir de toda la especificación de los puntos del 1.1 al 1.6.
+The following folder structure represents the frontend scaffold based on the defined architecture.
+
+```
+/src
+├── [app](./src/app)
+│   ├── [providers](./src/app/providers)
+│
+├── [presentation](./src/presentation)
+│   ├── [atoms](./src/presentation/atoms)
+│   ├── [molecules](./src/presentation/molecules)
+│   ├── [organisms](./src/presentation/organisms)
+│   ├── [templates](./src/presentation/templates)
+│   └── [pages](./src/presentation/pages)
+│
+├── [hooks](./src/hooks)
+│
+├── [application](./src/application)
+│   ├── [useCases](./src/application/useCases)
+│   └── [services](./src/application/services)
+│
+├── [domain](./src/domain)
+│   ├── [models](./src/domain/models)
+│   ├── [schemas](./src/domain/schemas)
+│   └── [rules](./src/domain/rules)
+│
+├── [infrastructure](./src/infrastructure)
+│   ├── [api](./src/infrastructure/api)
+│   ├── [processors](./src/infrastructure/processors)
+│   ├── [adapters](./src/infrastructure/adapters)
+│   └── [storage](./src/infrastructure/storage)
+│
+├── [patterns](./src/patterns)
+│   ├── [observer](./src/patterns/observer)
+│   ├── [singleton](./src/patterns/singleton)
+│   └── [strategy](./src/patterns/strategy)
+│
+├── [config](./src/config)
+├── [utils](./src/utils)
+├── [tests](./src/tests)
+│   ├── [unit](./src/tests/unit)
+│   └── [integration](./src/tests/integration)
+│
+└── [index.tsx](./src/index.tsx)
+```
+
