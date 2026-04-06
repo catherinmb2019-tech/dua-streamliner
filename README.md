@@ -445,16 +445,16 @@ The following folder structure represents the frontend scaffold based on the def
 
 # BACKEND
 ## Technology stack
--- Application protocol: REST API
--- Transport protocol: HTTPS 
--- API Gateway: AWS API Gateway
--- Hosting service: AWS ECS Fargate
--- API standard: OpenAPI
--- Asynchronous processing: Internal job processing (queue-based) for long-running tasks
--- Load balancing: Not required (handled by AWS managed services)
--- API language: TypeScript
--- Backend runtime: Node.js
--- Backend framework: NestJS
--- Repository strategy: Monorepo (shared with frontend)
--- Architecture style: Modular Monolith 
+- Application protocol: REST API
+- Transport protocol: HTTPS 
+-API Gateway: AWS API Gateway
+- Hosting service: AWS ECS Fargate
+- API standard: OpenAPI
+- Asynchronous processing: Internal job processing (queue-based) for long-running tasks
+- Load balancing: Not required (handled by AWS managed services)
+- API language: TypeScript
+- Backend runtime: Node.js
+- Backend framework: NestJS
+- Repository strategy: Monorepo (shared with frontend)
+- Architecture style: Modular Monolith 
 
