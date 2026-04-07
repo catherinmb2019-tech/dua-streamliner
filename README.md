@@ -442,7 +442,7 @@ The following folder structure represents the frontend scaffold based on the def
 │  
 └── [index.tsx](./src/index.tsx)
 
-
+---
 # BACKEND
 ## Technology stack
 - Application protocol: REST API
@@ -458,3 +458,59 @@ The following folder structure represents the frontend scaffold based on the def
 - Repository strategy: Monorepo (shared with frontend)
 - Architecture style: Modular Monolith 
 
+
+-- 
+# Security 
+- Transport security: HTTPS
+- Authentication: AWS Cognito (JWT)
+- Authorization: Role-Based Access Control (RBAC)
+- Encryption at rest: AES-256 (AWS KMS managed keys)
+- Secrets management: AWS Secrets Manager
+- API protection:
+
+    - Rate limiting via AWS API Gateway
+    - Input validation (request schema validation)
+    - Payload size limit: 10MB (exceptions for document processing endpoints)
+
+- Network security:
+    - VPC with private subnets for database and internal services
+    - Security Groups for access control
+    - S3 and services accessed via private endpoints 
+
+- Data retention:
+
+    - Operational data retention: 30 days
+    - Archived data stored in S3 (long-term storage)
+
+- Compliance considerations:
+    - Logging and monitoring via AWS CloudWatch
+    - Data stored in defined AWS region (data residency control)
+
+
+# Observability
+
+- Logged events:
+
+    - User login and logout
+    - DUA process start and completion
+    - File ingestion and document detection
+    - OCR processing events
+    - Data extraction and mapping steps
+    - Validation errors and inconsistencies
+    - System errors and exceptions
+
+- Logging platform: AWS CloudWatch (structured JSON logs with request-id)
+
+- Metrics:
+
+    - Request latency 
+    - Error rate
+    - DUA processing time
+    - Queue/job processing time
+    - System resource usage
+
+- Metrics platform: AWS CloudWatch Metrics
+
+- Distributed tracing: AWS X-Ray
+
+- Dashboards and monitoring: AWS CloudWatch Dashboards
