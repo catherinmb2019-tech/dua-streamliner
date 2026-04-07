@@ -459,7 +459,7 @@ The following folder structure represents the frontend scaffold based on the def
 - Architecture style: Modular Monolith 
 
 
--- 
+-- -
 # Security 
 - Transport security: HTTPS
 - Authentication: AWS Cognito (JWT)
@@ -485,7 +485,7 @@ The following folder structure represents the frontend scaffold based on the def
 - Compliance considerations:
     - Logging and monitoring via AWS CloudWatch
     - Data stored in defined AWS region (data residency control)
-
+---
 
 # Observability
 
@@ -514,3 +514,26 @@ The following folder structure represents the frontend scaffold based on the def
 - Distributed tracing: AWS X-Ray
 
 - Dashboards and monitoring: AWS CloudWatch Dashboards
+---
+
+# Infrastructure (DevOps)
+
+- CI/CD automation: GitHub Actions
+- Deployment tool (dev, staging, production): AWS ECS Fargate with AWS CloudFormation
+
+# Availability
+
+- Target uptime: 99.9% uptime
+
+- Single point of failure: DEBO DE PONERLO DESPUES DE DECIDIR TODO
+
+- Recovery strategy: SE DEBE DE PEDIAR A LA IA 
+
+# Scalability
+
+- Scalable components:
+
+    - API service (ECS Fargate auto-scaling based on request load)
+    - Database (RDS vertical scaling and read replicas if needed)
+    - Storage (S3 auto-scalable)
+    - Asynchronous processing (job workers scale based on queue load)
