@@ -450,7 +450,7 @@ The following folder structure represents the frontend scaffold based on the def
 -API Gateway: AWS API Gateway
 - Hosting service: AWS ECS Fargate
 - API standard: OpenAPI
-- Asynchronous processing: Internal job processing (queue-based) for long-running tasks
+- Asynchronous processing: Internal job processing  for long-running tasks
 - Load balancing: Not required (handled by AWS managed services)
 - API language: TypeScript
 - Backend runtime: Node.js
@@ -525,9 +525,16 @@ The following folder structure represents the frontend scaffold based on the def
 
 - Target uptime: 99.9% uptime
 
-- Single point of failure: DEBO DE PONERLO DESPUES DE DECIDIR TODO
+- Single points of failure and recovery:
 
-- Recovery strategy: SE DEBE DE PEDIAR A LA IA 
+    - API Gateway: managed service with high availability (no SPOF)
+    - ECS Fargate (API service): multi-AZ deployment ensures service availability
+    - Database (RDS): Multi-AZ with automatic failover ensures recovery
+    - Storage (S3): high availability and durability managed by AWS
+    - Asynchronous processing (workers): can be scaled horizontally to avoid single point of failure
+
+- Recovery strategy:
+    All components use AWS managed services with built-in high availability; any component that does not meet uptime requirements is configured with redundancy or automatic failover mechanisms
 ---
 # Scalability
 
