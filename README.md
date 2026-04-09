@@ -520,7 +520,7 @@ The following folder structure represents the frontend scaffold based on the def
 
 - CI/CD automation: GitHub Actions
 - Deployment tool (dev, staging, production): AWS ECS Fargate with AWS CloudFormation
-
+---
 # Availability
 
 - Target uptime: 99.9% uptime
@@ -528,12 +528,38 @@ The following folder structure represents the frontend scaffold based on the def
 - Single point of failure: DEBO DE PONERLO DESPUES DE DECIDIR TODO
 
 - Recovery strategy: SE DEBE DE PEDIAR A LA IA 
-
+---
 # Scalability
 
 - Scalable components:
 
-    - API service (ECS Fargate auto-scaling based on request load)
-    - Database (RDS vertical scaling and read replicas if needed)
-    - Storage (S3 auto-scalable)
-    - Asynchronous processing (job workers scale based on queue load)
+    - API service
+    - Database 
+    - Storage 
+    - Asynchronous processing 
+---
+# Backend Key Workflows
+## Upload files to generate DUA
+- The user sends the folder path to the backend
+- The backend registers a new DUA generation process in the database
+- The backend scans the folder and detects all available files
+- The backend reads each file and extracts raw content
+- The backend stores file metadata and extracted content
+- starts the document processing pipeline
+## Process documents
+- identifies the type of each document (PDF, Word, Excel, Image)
+- extracts text from each document
+- If the document is an image, OCR is applied
+- The backend consolidates all extracted text
+- The backend analyzes the text using semantic processing
+- extracts relevant DUA information
+## Generate DUA
+- The backend maps extracted data to the DUA template
+- The backend validates data consistency
+- The backend marks fields based on confidence level
+- generates the final Word document
+- The backend stores the generated document
+## Retrieve result
+- The user requests the result
+- The backend retrieves the generated DUA document
+- The backend returns the document to the user
