@@ -573,6 +573,8 @@ The following folder structure represents the frontend scaffold based on the def
 
 ---
 # Architecture diagrams in layers
-## Context diagram
-[Context diagramam](images/context.png)
 
+[Context diagram](images/context.png)
+
+[Code diagram](images/code.png)
+[Container diagramam](images/container.png)
