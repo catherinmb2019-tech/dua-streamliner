@@ -579,3 +579,51 @@ The following folder structure represents the frontend scaffold based on the def
 [Code diagram](images/code.png)
 
 [Container diagramam](images/container.png)
+
+---
+# Design Considerations
+
+## System configuration and parameters:
+
+    - Maximum number of files per DUA process to prevent overload (e.g., 50 files per request)
+    - Maximum file size per document (e.g., 10MB, with exceptions for large PDFs)
+    - Configurable processing timeout for long-running tasks
+    - Configurable confidence thresholds for extracted data (high, medium, low)
+
+# Resource allocation:
+    
+    - Backend services deployed in containerized environments with auto-scaling capabilities
+    - Memory and CPU allocation defined per container (API vs Processing Worker)
+    - Separation between API service and processing workloads to avoid resource contention
+    - Network configuration using private subnets for database and storage access
+
+# Algorithm selection and parameters:
+
+    - OCR processing for image-based documents with configurable accuracy vs performance trade-offs
+    - Semantic extraction using AI/NLP models with configurable confidence scoring
+    - Validation algorithms to ensure consistency (e.g., totals, currency, dates)
+    - File type detection algorithm based on extension and content validation
+
+# Agent / processing units definition:
+
+    - File Processing Agent: identifies and routes files to appropriate processors
+    - OCR Agent: processes image-based documents
+    - Extraction Agent: extracts structured data from raw text
+    - Mapping Agent: maps extracted data to DUA template
+    - Validation Agent: validates consistency and completeness
+    - Document Generation Agent: generates final DUA document
+
+# Integration points:
+
+    - Integration with AWS Cognito for authentication
+    - Integration with AWS S3 for file storage
+    - Integration with OCR engine for image processing
+    - Integration with database (PostgreSQL) for persistence
+    - Internal interfaces between processing modules using defined contracts (interfaces)
+
+# System policies:
+    
+    - Retry policies for failed processing steps
+    - Timeout policies for long-running operations
+    - Error handling and fallback mechanisms for incomplete data
+    - Logging policies for traceability of each DUA process
