@@ -627,3 +627,19 @@ The following folder structure represents the frontend scaffold based on the def
     - Timeout policies for long-running operations
     - Error handling and fallback mechanisms for incomplete data
     - Logging policies for traceability of each DUA process
+
+---
+# Source Code
+## Backend Structure
+
+/ src 
+
+- [Common](dua-backend/src/common)
+- [Config](dua-backend/src/config)
+- [Modules](dua-backend/src/modules)
+- [Shared](dua-backend/src/shared)
+
+## Entry Points
+
+- [App Module](dua-backend/src/app.module.ts)
+- [Main](dua-backend/src/main.ts)
