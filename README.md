@@ -570,3 +570,8 @@ The following folder structure represents the frontend scaffold based on the def
 - The user requests the result
 - The backend retrieves the generated DUA document
 - The backend returns the document to the user
+
+---
+# Architecture diagrams in layers
+## Context diagram
+<img src="images/context.png" width="200" alt="context">
