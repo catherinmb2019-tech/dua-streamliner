@@ -574,4 +574,5 @@ The following folder structure represents the frontend scaffold based on the def
 ---
 # Architecture diagrams in layers
 ## Context diagram
-<img src="images/context.png" width="200" alt="context">
+[Context diagramam](images/context.png)
+
